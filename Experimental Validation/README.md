@@ -1,3 +1,3 @@
 # OpenFlume
 
-Data and processing code, including finished figures and results. 
+Figures from our OpenFlume paper and data in CSV format used to generate them.
