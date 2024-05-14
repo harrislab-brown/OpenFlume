@@ -9,3 +9,5 @@ can follow our instructions and build an OpenFlume to suit your needs.
 OpenFlume was designed by members of the Harris Lab and Brown University for experiments related to drag at the interface. To conduct these experiments, the lab needed a well controlled and uniform flow with low surface deviation. 
 When looking at the commercial landscape for small scale flumes, the few small scale flumes that were available were expensive and lacked the full characterization needed for the lab to be confident in their applicability to research. 
 
+## License:
+OpenFlume is licensed under the CC BY-SA 4.0 Creative Commons license. 
