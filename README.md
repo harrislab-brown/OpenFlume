@@ -1,5 +1,5 @@
 # OpenFlume
-Low-cost laboratory flume for research and education with full build documentation released under an open-hardware license.
+Low-cost benchtop laboratory flume for research and education with full build documentation released under an open-hardware license.
 
 ## Why Build OpenFlume?
 OpenFlume is an open channel flume that features a 5x5cm flow test-section with free stream speeds upto 50 cm/s. It is as small as it can be while still allowing for ample flow conditioning prior to the test section. It has been fully characterized using Particle
