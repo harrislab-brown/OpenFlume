@@ -1,4 +1,6 @@
 
+//#include <Arduino.h>
+
 #define PIN_flow_meter 3
 #define PIN_pump_pwm 5
 
@@ -76,9 +78,12 @@ void set_pump(float duty_cycle)
   { // check if the set value is in bounds
     analogWrite(PIN_pump_pwm, analog_write_val);
     curr_duty_cycle = duty_cycle;
+  }else if(analog_write_val == 0)
+  { // ignore line end characters. \r\n returns 0 from Serial.parseFloat()
+    return;
   }
   else
-  {
+  { 
     Serial.printf("Pump duty cycle must be between [%.2f - %.2f]\n", MIN_DUTY * 100, MAX_DUTY * 100); // allert user if set value is out of bounds
   }
 }
@@ -113,8 +118,8 @@ void flow_meter_pulse()
   float freq_avg = 1000000.0 / dT_avg;
 
   // print result. Print statement runs much faster than the flow meter can spin and no issues with printing from the ISR have been observed
-  Serial.printf("|  Time (s): %012.6f  |  Pump percent: %.2f  |  Inst. flow rate (LPM): %05.2f  |  Avg. flow rate (LPM): %05.2f  |\n",
-                curr_time / 1000000.0, curr_duty_cycle, freq * 2, freq_avg * 2);
+  Serial.printf("Time_(s):%012.6f\tPump_percent:%.2f\tInst._flow_rate(LPM):%05.2f\tAvg._flow_rate(LPM):%05.2f\n",
+            curr_time / 1000000.0, curr_duty_cycle, freq * 2, freq_avg * 2);
 
   // update time for next dT calculation
   prev_time = curr_time;
